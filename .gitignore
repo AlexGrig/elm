@@ -1,0 +1,27 @@
+# This file lists what files are ignored by git:
+
+# Compiled packages:
+
+*.pyc
+
+# Backup text files
+
+*~
+
+# png images
+
+*.png
+*.PNG
+
+# Data files for testing
+
+*.mat
+*.MAT
+
+# Matlab files
+
+*.m
+
+
+
+
