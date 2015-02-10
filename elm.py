@@ -12,7 +12,6 @@ from matplotlib import mlab # for percentile calculation
 from scipy.spatial import distance as dist
 import scipy as sp
 import scipy.linalg as la
-from my_num_utils import sqr_euclid # squared euclidean norm.
 from scipy.optimize import minimize_scalar # Find optimal lambda for
 import itertools
 import warnings
@@ -88,7 +87,7 @@ def loo_error(X,Y,loo_type='press',U=None,S=None,lamda=0.0):
         XtX = np.dot( X.T, X)
         
         if (lamda != 0.0):   
-            XtX = XtX + n*lamda*np.eye(X_dim) # parameter lambda normalized with respect to number of points !!!
+            XtX = XtX + n_samples*lamda*np.eye(X_dim) # parameter lambda normalized with respect to number of points !!!
             
         chol = sp.linalg.cho_factor(XtX, overwrite_a = True, check_finite=False)
         
@@ -525,7 +524,7 @@ class ELM(object):
         Y_pred = du.denormalize( Y_pred, self.data.y_means, self.data.y_stds )        
         
         if not Y is None:
-            nmse = sqr_euclid( Y- Y_pred ) / Y_pred.shape[0]
+            nmse = nu.sqr_euclid( Y- Y_pred ) / Y_pred.shape[0]
         else:
             nmse = None            
         
