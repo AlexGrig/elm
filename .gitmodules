@@ -1,0 +1,12 @@
+[submodule "utils"]
+	path = utils
+	url = https://github.com/AlexGrig/utils.git
+[submodule "ts_utils"]
+	path = ts_utils
+	url = https://github.com/AlexGrig/ts_utils.git
+[submodule "extra_ls_solvers"]
+	path = extra_ls_solvers
+	url = https://github.com/AlexGrig/extra_ls_solvers.git
+[submodule "svd_update"]
+	path = svd_update
+	url = https://github.com/AlexGrig/svd_update.git
